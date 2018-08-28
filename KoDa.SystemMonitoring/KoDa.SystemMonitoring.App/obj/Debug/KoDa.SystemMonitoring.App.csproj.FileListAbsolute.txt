@@ -1,0 +1,7 @@
+D:\SystemMonitoring\KoDa.SystemMonitoring\KoDa.SystemMonitoring.App\bin\Debug\KoDa.SystemMonitoring.App.exe
+D:\SystemMonitoring\KoDa.SystemMonitoring\KoDa.SystemMonitoring.App\bin\Debug\KoDa.SystemMonitoring.App.pdb
+D:\SystemMonitoring\KoDa.SystemMonitoring\KoDa.SystemMonitoring.App\bin\Debug\KoDa.SystemMonitoring.Library.dll
+D:\SystemMonitoring\KoDa.SystemMonitoring\KoDa.SystemMonitoring.App\bin\Debug\KoDa.SystemMonitoring.Library.pdb
+D:\SystemMonitoring\KoDa.SystemMonitoring\KoDa.SystemMonitoring.App\obj\Debug\KoDa.SystemMonitoring.App.csprojResolveAssemblyReference.cache
+D:\SystemMonitoring\KoDa.SystemMonitoring\KoDa.SystemMonitoring.App\obj\Debug\KoDa.SystemMonitoring.App.exe
+D:\SystemMonitoring\KoDa.SystemMonitoring\KoDa.SystemMonitoring.App\obj\Debug\KoDa.SystemMonitoring.App.pdb

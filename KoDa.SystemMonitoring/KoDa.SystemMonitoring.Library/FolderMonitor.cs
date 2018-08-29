@@ -36,7 +36,7 @@ namespace KoDa.SystemMonitoring.Library
             {
                 TrackChanges();
                 GetHash();
-                Thread.Sleep(10000);
+                Thread.Sleep(15000);
                 Console.WriteLine("\n10 second\n");
                 
             }
@@ -84,29 +84,36 @@ namespace KoDa.SystemMonitoring.Library
             public void GetHash()
             {
 
-            byte[] buffer = new byte[4096];
+            var md5 = System.Security.Cryptography.MD5.Create();
 
-            using (var md5 = new MD5CryptoServiceProvider())
+            foreach (var d1 in new System.IO.DirectoryInfo(_path).GetDirectories())
             {
-                foreach (var file in Directory.EnumerateDirectories(_path, ".files", SearchOption.AllDirectories))
-                {
-                    int length;
-                    using (var fs = File.OpenRead(file))
+               
+                    foreach (var d2 in d1.GetFiles())
                     {
-                        do
-                        {
-                            length = fs.Read(buffer, 0, buffer.Length);
-                            md5.TransformBlock(buffer, 0, length, buffer, 0);
-                        } while (length > 0);
+                        Console.WriteLine("MD5: {0} - FileName: {1}",
+                            BitConverter.ToString(md5.ComputeHash(d2.OpenRead()))
+                                .Replace("-", string.Empty),
+                            d2.Name);
+                    }
+
+                    foreach (var d3 in d1.GetDirectories())
+                {
+                    foreach (var d4 in d3.GetFiles())
+                    {
+                        Console.WriteLine("MD5: {0} - FileName: {1}",
+                            BitConverter.ToString(md5.ComputeHash(d4.OpenRead()))
+                                .Replace("-", string.Empty),
+                            d4.Name);
                     }
                 }
-                md5.TransformFinalBlock(buffer, 0, 0);
-                Console.WriteLine(BitConverter.ToString(md5.Hash));
-            }
+                }
+           
+        }
 
-         
-        }
-        }
 
     }
+        }
+
+    
 
